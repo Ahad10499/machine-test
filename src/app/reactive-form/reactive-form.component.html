@@ -23,12 +23,8 @@
   </div>
 </nav>
 
-<div class="container" id=container>
+<div class="container mt-3" id=container>
   <div class="register-box">
-    <div class="register-logo text-center">
-      <a [routerLink]="['/']"><b>Reactive</b>Form</a>
-    </div>
-
     <div class="card">
       <div class="card-body register-card-body">
         <p class="login-box-msg text-center">Register a new membership</p>
@@ -44,18 +40,18 @@
               Name is required!
             </small>
             <small  class="text-danger" *ngIf="f.name.errors?.minlength || f.name.errors?.maxlength ">
-              Name must be greater than 2 characters and less than 10. 
+              Name must be greater than 2 characters and less than 20. 
             </small>
           </div>  
 
           <div class="input-group mt-3">
             <input formControlName="password" type="password" class="form-control" placeholder="Password" />          
           </div>
-          <div *ngIf="f.name.touched && f.name.invalid">
+          <div *ngIf="f.password.touched && f.password.invalid">
             <small class="text-danger" *ngIf="f.password.errors?.required">
               Password is required!
             </small>
-            <small  class="text-danger" *ngIf="f.name.errors?.minlength">
+            <small  class="text-danger" *ngIf="f.password.errors?.minlength">
               password must be at least 4 characters long. 
             </small>
           </div>
@@ -64,19 +60,23 @@
           <div class="input-group mt-3">
             <input formControlName="email" type="text" class="form-control" placeholder="Email" />          
           </div>
-          <div *ngIf="f.name.touched && f.name.invalid">
+          <div *ngIf="f.email.touched && f.email.invalid">
             <small class="text-danger " *ngIf="f.email.errors?.required">
               Email is required
+            </small>
+            <small class="text-danger " *ngIf="f.email.errors?.pattern">
+              pattern not match
             </small>
           </div>
 
           <div class="input-group mt-3">
             <input formControlName="address" type="text" class="form-control" placeholder="Address" />
           </div>
-          <div *ngIf="f.name.touched && f.name.invalid">
+          <div *ngIf="f.address.touched && f.address.invalid">
             <small class="text-danger" *ngIf="f.address.errors?.required">
               Address is required!
             </small>
+          
           </div>
 
           <div class="row mt-3">
@@ -84,33 +84,33 @@
               <div class="icheck-primary">
                 <input type="checkbox" id="agreeTerms" name="terms" value="agree" />
                 <label for="agreeTerms">
-                  I agree to the <a href="#">terms</a>
+                  I agree to the <a routerLink="/**">terms</a>
                 </label>
               </div>
             </div>
             <!-- /.col -->
             <div class="col-6">
-              <button type="submit" class="btn btn-primary btn-block">
+              <button type="submit" class="btn btn-primary btn-block" [disabled]=" f.name.invalid || f.password.invalid || f.email.invalid || f.address.invalid">
                 Register
               </button>
             </div>
-            <!-- /.col -->
+            <!-- /.col -->  
           </div>
         </form>
 
         <div class="social-auth-links text-center">
           <p>- OR -</p>
-          <a href="#" class="btn btn-block btn-primary">
+          <a routerLink="/**" class="btn btn-block btn-primary">
             <i class="fab fa-facebook mr-2"></i>
             Sign up using Facebook
           </a>
-          <a href="#" class="btn btn-block btn-danger">
+          <a routerLink="/**" class="btn btn-block btn-danger">
             <i class="fab fa-google-plus mr-2"></i>
             Sign up using Google+
           </a>
         </div>
 
-        <a [routerLink]="['/']" class="text-center mt-2">I already have a membership</a>
+        <a [routerLink]="['/**']" class="text-center mt-2">I already have a membership</a>
 
         <!-- /.form-box -->
       </div>

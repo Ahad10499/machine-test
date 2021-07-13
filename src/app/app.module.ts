@@ -11,13 +11,15 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { UserDeatilsComponent } from './user-deatils/user-deatils.component';
 import {CommonModule} from '@angular/common';
 import { ToastrModule } from "ngx-toastr";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ReactiveFormComponent,
-    UserDeatilsComponent
+    UserDeatilsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,

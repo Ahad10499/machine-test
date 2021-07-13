@@ -10,7 +10,6 @@ import { IUser } from '../user';
 })
 export class UserDeatilsComponent implements OnInit {
   rows: IUser[] = [];
-  model: any; 
   constructor(private service: UserService) { }
   users : any;
   ngOnInit(): void {

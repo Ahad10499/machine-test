@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Sebastian",
+      "password": "56655655",
+      "email": "sebastian@codingthesmartway.com",
+      "address": "Mumbai"
+    },
+    {
+      "id": 2,
+      "name": "Steve",
+      "password": "56655655",
+      "email": "steve@codingthesmartway.com",
+      "address": "puna"
+    },
+    {
+      "id": 3,
+      "name": "Ann",
+      "password": "56655655",
+      "email": "ann@codingthesmartway.com",
+      "address": "Mumbai"
+    },
+    {
+      "id": "6",
+      "name": "siddique",
+      "password": "45678",
+      "email": "siddiqui@123",
+      "address": "kanjur"
+    },
+    {
+      "name": "ahad",
+      "password": "123456",
+      "email": "sidd@123gmail.com",
+      "address": "puna",
+      "id": "q4J8QLk"
+    },
+    {
+      "name": "Ahad",
+      "password": "123456",
+      "email": "ahad@123gmail.com",
+      "address": "powai",
+      "id": "YGOTBKW"
+    }
+  ]
+}

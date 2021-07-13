@@ -19,16 +19,19 @@ export class ReactiveFormComponent implements OnInit {
      public service: UserService,
      private toastr: ToastrService,
     private router: Router) { }
-
+    
+    emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   ngOnInit(  ) 
   {
+   
     this.registerForm = new FormGroup({
-    name: new FormControl(null, [Validators.required, Validators.minLength(3),Validators.maxLength(12)] ),
+      name: new FormControl(null, [Validators.required, Validators.minLength(3),Validators.maxLength(20)] ),
     password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
-    email: new FormControl(null, Validators.required),
-    address: new FormControl(null, Validators.required),
+    email: new FormControl(null, [Validators.required,Validators.pattern(this.emailPattern)]),
+    address: new FormControl(null,Validators.required),
   });
   }
+ 
   get f()
 {
     return this.registerForm.controls;
