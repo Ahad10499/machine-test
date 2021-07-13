@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+    <div class="container">
+        <a class="navbar-brand" href="#">MACHINE-TEST
+            <!-- <img src="assets/images/logo.png" alt="Angular Project" /> -->
+        </a>
+        <button class="navbar-toggler collapsed " type="button" data-toggle="collapse" data-target="#Navbar" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse collapse" id="Navbar">
+            <ul class=" navbar-nav text-center ml-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user" routerLinkActive="active">User-Details</a>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid text-center">
+ 
+    <table  class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Password</th>
+          <th scope="col">Email</th>
+          <th scope="col">Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let user of users; index as i">
+          <tr>
+            <th scope="row">{{i+1}}</th>
+            <td>{{ user.name }}</td>
+            <td>{{user.password}}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.address }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+</div>
