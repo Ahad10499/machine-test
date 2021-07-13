@@ -62,10 +62,10 @@
           </div>
           <div *ngIf="f.email.touched && f.email.invalid">
             <small class="text-danger " *ngIf="f.email.errors?.required">
-              Email is required
+              Official Email required
             </small>
             <small class="text-danger " *ngIf="f.email.errors?.pattern">
-              pattern not match
+              Official Email not valid
             </small>
           </div>
 
